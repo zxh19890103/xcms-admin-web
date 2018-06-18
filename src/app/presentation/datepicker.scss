@@ -1,0 +1,98 @@
+.datepickerPopup {
+  width: 350px;
+  background-color: #fcfcfc;
+  border-radius: 4px;
+  box-shadow: 0 30px 40px 0 rgba(16, 36, 94, 0.5);
+  &--hidden {
+    display: none;
+  }
+}
+
+.datepickerGrid {
+  @include flex();
+  flex-wrap: wrap;
+  &__item {
+    width: 14.28571%;
+    > a {
+      display: block;
+      padding: .5rem;
+      font-size: .75rem;
+      text-align: center;
+      color: #444;
+      @include underline(none);
+      &:hover {
+        background-color: #EFEFEF;
+      }
+    }
+    &--red {
+      > a {
+        color: $color-danger;
+      }
+    }
+    &--gray {
+      > a {
+        color: #888;
+      }
+    }
+    &--checked {
+      > a {
+        background-color: $color-primary !important;
+        color: #FFF;
+      }
+    }
+    &--today {
+      > a {
+        background-color: $color-success !important;
+        color: #FFF;
+      }
+    }
+  }
+}
+
+.datepickerGrid--month, .datepickerGrid--year {
+  > .datepickerGrid__item {
+    width: 25%;
+  }
+}
+
+.datepickerDayGroup {
+  @include flex();
+  flex-wrap: wrap;
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
+  &__item {
+    width: 14.28571%;
+    padding: .5rem 0;
+    font-size: .75rem;
+  }
+}
+
+.datepickerYMCtrl {
+  position: relative;
+  padding: .6rem 0;
+  text-align: center;
+  &__left, &__right {
+    position: absolute;
+    top: .6rem;
+  }
+  &__left {
+    left: .7rem;
+  }
+  &__right {
+    right: .7rem;
+  }
+  a {
+    color: #000;
+    @include underline(none);
+  }
+}
+
+.datepicker {
+  position: relative;
+  &Popup {
+    position: absolute;
+    z-index: 1;
+  }
+}

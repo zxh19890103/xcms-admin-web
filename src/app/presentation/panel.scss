@@ -1,0 +1,44 @@
+.panel {
+  border: 1px solid #AAA;
+  border-radius: 6px;
+  background-color: #FFF;
+  &__header {
+    padding: .5rem 1rem;
+    background-color: #FFF;
+    border-bottom: 1px solid #DDD;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+  &__title {
+    margin: 0;
+    color: #888;
+    font-size: 1.1rem;
+  }
+  &__body {
+    padding: 1rem;
+  }
+  @each $type, $color, $t-color in (default, $color-gray, #fff),
+                                (primary, $color-primary, #fff),
+                                (success, $color-success, #fff),
+                                (danger, $color-danger, #fff),
+                                (warning, $color-warning, #fff),
+                                (lite, $color-lite, $color-dark),
+                                (dark, $color-dark, #fff) {
+    &--#{$type} {
+      border-color: darken($color, 5);
+      .panel__header {
+        background-color: $color;
+        border-color: transparent;
+      }
+      .panel__title {
+        color: $t-color;
+      }
+    }
+  }
+}
+
+.panelGroup {
+  > .panel {
+    margin: 1rem 0;
+  }
+}

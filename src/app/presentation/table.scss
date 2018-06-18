@@ -1,0 +1,28 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  > tbody > tr {
+    &:hover {
+      background-color: #EFEFEF;
+    }
+  }
+  > tbody > tr > td, > thead > tr > th {
+    padding: .5rem;
+    border: 1px solid #ddd;
+  }
+  > tbody > tr > td {
+    color: #555;
+  }
+  > thead > tr > th {
+    text-align: left;
+    border-top-width: 0;
+  }
+}
+
+.checkCell {
+  width: 40px;
+  > .checkboxGroup__item {
+    width: 100%;
+    text-align: center;
+  }
+}

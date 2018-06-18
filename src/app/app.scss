@@ -1,0 +1,26 @@
+@import 'presentation/variables.scss';
+
+.xCMSApp {
+  height: 100%;
+  &__left {
+    position: relative;
+    float: left;
+    width: $left-width;
+    height: 100%;
+    background-color: rgba(31, 39, 44, 1);
+  }
+  &__right {
+    margin-left: $left-width;
+  }
+  &__rightTop {
+    height: $right-top-height;
+    background-color: rgb(56, 90, 136);
+  }
+  &__route {
+    background-color: $content-bg;
+    overflow-y: auto;
+  }
+  &__routeInner {
+    padding: $content-padding;
+  }
+}

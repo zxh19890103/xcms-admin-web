@@ -1,0 +1,64 @@
+$btn-border-radius-size: 6px;
+
+.btn {
+  display: inline-block;
+  padding: .8rem 2.7rem;
+  border: 1px solid transparent;
+  border-radius: $btn-border-radius-size;
+  font-size: 1rem;
+  text-align: center;
+  outline: none;
+  &--small {
+    padding: .6rem 1.5rem;
+    font-size: .92rem;
+  }
+  @each $type, $color, $t-color in (default, $color-gray, #fff),
+                                (primary, $color-primary, #fff),
+                                (success, $color-success, #fff),
+                                (danger, $color-danger, #fff),
+                                (warning, $color-warning, #fff),
+                                (lite, $color-lite, $color-dark),
+                                (dark, $color-dark, #fff) {
+    &--#{$type} {
+      background: $color;
+      @include gradient(bottom, $color, lighten($color, 16));
+      border-color: darken($color, 10);
+      color: $t-color;
+      &:hover, &:focus {
+        background: lighten($color, 5);
+        @include gradient(bottom, $color, lighten($color, 25));
+      }
+      &:disabled {
+        background: $color;
+        @include gradient(bottom, $color, lighten($color, 16));
+      }
+    }
+  }
+  &:disabled {
+    cursor: not-allowed;
+    opacity: .45;
+  }
+}
+
+.btnGroup {
+  display: inline-flex;
+  display: -webkit-inline-flex;
+  > .btn {
+    border-radius: 0;
+    flex: {
+      grow: 0;
+      shrink: 1;
+      basis: auto;
+    }
+    &:first-child {
+      border-top-left-radius: $btn-border-radius-size;
+      border-bottom-left-radius: $btn-border-radius-size;
+      border-right: none;
+    }
+    &:last-child {
+      border-top-right-radius: $btn-border-radius-size;
+      border-bottom-right-radius: $btn-border-radius-size;
+      border-left: none;
+    }
+  }
+}

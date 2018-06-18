@@ -1,0 +1,103 @@
+@mixin fa($content) {
+  display: inline-block;
+  width: 25px;
+  text-align: center;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  color: rgb(29, 53, 84);
+  content: $content;
+}
+
+@mixin placeholder($color) {
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+  &::-moz-placeholder {
+    color: $color;
+  }
+  &::-ms-input-placeholder {
+    color: $color;
+  }
+}
+
+@mixin rotate($angle) {
+  transform: rotate($angle);
+  -webkit-transform: rotate($angle);
+  -ms-transform: rotate($angle);
+  -o-transform: rotate($angle);
+  -moz-transform: rotate($angle);
+}
+
+@mixin skew($angleX, $angleY) {
+  transform: skew($angleX, $angleY);
+  -webkit-transform: skew($angleX, $angleY);
+  -o-transform: skew($angleX, $angleY);
+  -ms-transform: skew($angleX, $angleY);
+  -moz-transform: skew($angleX, $angleY);
+}
+
+@mixin transition($def...) {
+  transition: $def;
+  -webkit-transtion: $def;
+  -o-transition: $def;
+  -moz-transition: $def;
+  -ms-transition: $def;
+}
+
+@mixin flex($inline: false) {
+  @if $inline {
+    display: inline-flex;
+    display: -webkit-inline-flex;
+  } @else {
+    display: flex;
+    display: -webkit-flex;
+  }
+  flex-wrap: wrap;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+@mixin gradient($direction, $from, $to) {
+  background: linear-gradient($direction, $from, $to);
+  background: -webkit-linear-gradient($direction, $from, $to);
+  background: -o-linear-gradient($direction, $from, $to);
+  background: -moz-linear-gradient($direction, $from, $to);
+}
+
+@mixin underline($value) {
+  text-decoration: $value;
+  text-decoration-line: $value;
+  -moz-text-decoration-line: $value;
+}
+
+@mixin  animation($def) {
+  animation: $def;
+  -moz-animation: $def; /* Firefox */
+  -webkit-animation: $def; /* Safari and Chrome */
+  -o-animation: $def; /* Opera */
+}
+
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin  box-sizing($value) {
+  box-sizing: $value;
+  -webkit-box-sizing: $value;
+  -moz-box-sizing: $value;
+}

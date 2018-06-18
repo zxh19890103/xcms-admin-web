@@ -1,0 +1,65 @@
+{
+  "name": "xcms-admin-web",
+  "version": "1.0.0",
+  "description": "a xcms admin end of web.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./build/dev-server.js",
+    "build": "node ./build/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zxh19890103/xcms.git"
+  },
+  "keywords": [
+    "xcms",
+    "admin",
+    "web",
+    "react"
+  ],
+  "author": "singhi john",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zxh19890103/xcms/issues"
+  },
+  "homepage": "https://github.com/zxh19890103/xcms#readme",
+  "dependencies": {
+    "moment": "^2.22.2",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "redux": "^4.0.0",
+    "reselect": "^3.0.1",
+    "superagent": "^3.8.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "copy-webpack-plugin": "^4.5.1",
+    "css-loader": "^0.28.11",
+    "eventsource-polyfill": "^0.9.6",
+    "express": "^4.16.3",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.0.0",
+    "nodemon": "^1.17.3",
+    "optimize-css-assets-webpack-plugin": "^4.0.0",
+    "ora": "^2.1.0",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.3",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.5.0",
+    "webpack-dev-middleware": "^3.1.2",
+    "webpack-hot-middleware": "^2.21.2",
+    "webpack-manifest-plugin": "^2.0.0",
+    "webpack-merge": "^4.1.2"
+  }
+}

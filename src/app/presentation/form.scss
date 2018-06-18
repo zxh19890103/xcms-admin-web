@@ -1,0 +1,124 @@
+.form {
+  > .formGroup {
+    margin-bottom: 2rem;
+  }
+}
+.formGroup {
+  &__label {
+    color: #444;
+    font: {
+      size: .9rem;
+    }
+    &:after {
+      content: ':';
+    }
+  }
+  &__control {
+    padding-top: .5rem;
+    input, select, textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: .7rem 1rem;
+      outline: none;
+      border: 1px solid rgb(209, 212, 213);
+      border-radius: 3px 4px;
+      font-size: 1rem;
+      color: #555;
+      background-color: #fff;
+      @include placeholder(#AAA);
+      &:focus {
+        @include placeholder(#DDD);
+      }
+    }
+    select {
+      height: 2.4rem;
+      background: {
+        color: #FFF;
+      }
+    }
+    textarea {
+      min-height: 7rem;
+    }
+    &--invalid {
+      input, select, textarea {
+        border-color: $color-danger;
+      }
+    }
+    &--valid {
+      input, select, textarea {
+        border-color: $color-success;
+      }
+    }
+  }
+}
+
+.checkbox {
+  display: inline-block;
+  width: 100%;
+  &__bg {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: gray;
+  }
+  &__control {
+    cursor: pointer;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 26px;
+    height: 26px;
+    border: 1px solid #887;
+    border-radius: 13px;
+    background-color: #FFF;
+    @include transition(left .3s ease);
+  }
+  &--checked {
+    .checkbox__control {
+      left: 31px;
+    }
+    .checkbox__bg {
+      background: {
+        color: $color-success;
+      }
+    }
+  }
+}
+
+.radioButton {
+  cursor: pointer;
+  height: 30px;
+  line-height: 30px;
+  text-align: left;
+  color: #AAA;
+  &--checked {
+    color: #555;
+    > i:before {
+      content: "\f058" !important;
+    }
+  }
+  > i:before {
+    content: "\f111";
+  }
+}
+
+.radioButtonGroup {
+  @include flex();
+}
+
+.checkboxGroup {
+  @include flex();
+  &__item {
+    @extend .radioButton;
+    &--checked {
+      color: #555;
+      > i:before {
+        content: "\f14a" !important;
+      }
+    }
+    > i:before {
+      content: "\f0c8";
+    }
+  }
+}

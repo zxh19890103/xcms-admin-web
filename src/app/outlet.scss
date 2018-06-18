@@ -1,0 +1,55 @@
+@import 'presentation/mixins.scss';
+@import 'presentation/variables.scss';
+
+$logo-img-size: 42px;
+$logo-height: $logo-img-size;
+$logo-padding-y: ($right-top-height - $logo-img-size) / 2;
+
+.sideBarMenu {
+  padding: 0;
+  margin: 0;
+  font-size: 26px;
+  &__item {
+    display: block;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+    > a {
+      color: rgb(96, 96, 102);
+    }
+    &--bottom {
+      position: absolute;
+      bottom: 0;
+    }
+    &:hover, &--active {
+      background-color: $content-bg;
+    }
+  }
+}
+
+.topBar {
+  color: rgb(204, 214, 237);
+}
+
+.crumbNav {
+  padding-left: $content-padding;
+  font-size: 16px;
+  line-height: $right-top-height;
+  &__item {
+    &--cap:after {
+      @include fa("\f105");
+    }
+  }
+}
+
+.logo {
+  height: $logo-height;
+  padding: $logo-padding-y 0;
+  margin-bottom: 30px;
+  text-align: center;
+  background-color: rgb(29,53,84);
+  > img {
+    width: $logo-img-size;
+    height: $logo-img-size;
+  }
+}

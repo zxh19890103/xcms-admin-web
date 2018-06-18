@@ -1,0 +1,40 @@
+.toolTip {
+  background-color: transparent;
+  &__body {
+    position: relative;
+    z-index: 2;
+    padding: .6rem;
+    background-color: rgba(0,0,0,.9);
+    border-radius: 6px;
+    color: #FFF;
+    font-size: .8rem;
+  }
+  &__caret {
+    text-align: center;
+    > i {
+      position: relative;
+      top: -10px;
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      @include rotate(45deg);
+      background-color: rgba(0,0,0,.9);
+    }
+  }
+  &__icon {
+    margin-left: .2rem;
+    margin-right: .2rem;
+  }
+  &--hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: $tooltip-z;
+    min-width: 150px;
+    max-width: 210px;
+  }
+  &--text {
+    color: #888;
+    font-size: .85rem;
+  }
+}

@@ -1,0 +1,25 @@
+.pager {
+  &__in {
+    list-style: none;
+    text-align: center;
+    @include flex(true);
+  }
+  &__item {
+    width: 2rem;
+    > a {
+      color: $color-dark;
+      @include underline(none);
+    }
+    &:hover {
+      > a {
+        color: $color-primary;
+      }
+    }
+    &--disabled, &--active {
+      > a {
+        cursor: not-allowed;
+        color: $color-gray !important;
+      }
+    }
+  }
+}

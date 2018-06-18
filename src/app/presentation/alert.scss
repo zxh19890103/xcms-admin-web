@@ -1,0 +1,47 @@
+.alert {
+  position: relative;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  @each $type, $color, $t-color in (default, $color-gray, #fff),
+                                (primary, $color-primary, #fff),
+                                (success, $color-success, #fff),
+                                (danger, $color-danger, #fff),
+                                (warning, $color-warning, #fff),
+                                (lite, $color-lite, $color-dark),
+                                (dark, $color-dark, #fff) {
+    &--#{$type} {
+      color: $t-color;
+      background-color: $color;
+      border-color: darken($color, 6);
+      &.alpha {
+        background-color: rgba($color, .85);
+      }
+    }
+  }
+
+  &__text {
+    display: inline;
+  }
+  &__close {
+    color: #fff;
+    float: right;
+    &:hover {
+      color: #efefef;
+    }
+  }
+  &__icon {
+    margin-right: 8px;
+  }
+}
+
+.alertGroup {
+  position: fixed;
+  top: 6px;
+  left: 0;
+  width: 100%;
+  padding: 0 8rem;
+  z-index: $alert-group-z;
+  @include box-sizing(border-box);
+}

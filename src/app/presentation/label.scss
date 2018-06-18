@@ -1,0 +1,19 @@
+.label {
+  padding: .3rem .6rem;
+  font-size: .8rem;
+  color: #FFF;
+  border-radius: 3px;
+  margin: 0 3px;
+  @each $type, $color, $t-color in (default, $color-gray, #fff),
+                                (primary, $color-primary, #fff),
+                                (success, $color-success, #fff),
+                                (danger, $color-danger, #fff),
+                                (warning, $color-warning, #fff),
+                                (lite, $color-lite, $color-dark),
+                                (dark, $color-dark, #fff) {
+    &--#{$type} {
+      background-color: $color;
+      color: $t-color;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.tabGroup {
+  &__buttons {
+    margin: 0;
+    padding: 0 .8rem;
+    list-style-type: none;
+    border-bottom: 1px solid $color-primary;
+    @include flex();
+  }
+
+  &__button {
+    flex-shrink: 0;
+    flex-grow: 1;
+    text-align: center;
+    > a {
+      display: block;
+      padding: .5rem 0;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      color: $color-gray;
+      @include underline(none);
+    }
+    &--active {
+      > a {
+        background-color: $color-primary;
+        color: #fff;
+      }
+    }
+  }
+
+  &__item {
+    display: none;
+    padding: 1rem 0;
+    &--active {
+      display: block;
+    }
+  }
+}

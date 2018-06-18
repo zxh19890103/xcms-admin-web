@@ -1,0 +1,23 @@
+@import 'presentation/variables.scss';
+@import 'presentation/mixins.scss';
+@import 'presentation/utilities.scss';
+@import 'presentation/panel.scss';
+@import 'presentation/button.scss';
+@import 'presentation/table.scss';
+@import 'presentation/form.scss';
+@import 'presentation/grid.scss';
+@import 'presentation/tooltip.scss';
+@import 'presentation/datepicker.scss';
+@import 'presentation/modal.scss';
+@import 'presentation/label.scss';
+@import 'presentation/alert.scss';
+@import 'presentation/tab.scss';
+@import 'presentation/pager.scss';
+
+html {
+  font-size: 16px;
+}
+body {
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
+}
